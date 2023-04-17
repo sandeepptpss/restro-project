@@ -40,7 +40,6 @@ export default {
         }
     }
 },
-
 mounted(){
         let User = localStorage.getItem('user-info');
             if(User){

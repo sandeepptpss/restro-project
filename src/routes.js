@@ -9,7 +9,7 @@ const routes=[
         component:Home,
         path:'/'
     },
-    
+
     {
         name:'SignUp',
         component:SignUp,
@@ -21,6 +21,7 @@ const routes=[
         path:'/login'
     }
 
+    
 ]
 const router =createRouter({
     history:createWebHistory(),
