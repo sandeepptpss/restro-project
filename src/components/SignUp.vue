@@ -1,7 +1,7 @@
 <template>
 <div class="main-signup">
 <div class="inner-logo">
-<img class="mysignupLogo" src="./images/Signup.png">
+<img class="mysignupLogo" src="./images/SignUp.png">
 <h2 class="signup-title">Sign Up</h2>
 </div>
 <div class="signup">
