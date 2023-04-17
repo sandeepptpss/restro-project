@@ -13,5 +13,5 @@ export default{
 </script>
 <template>
 
-    <h2>This is Home Page</h2>
+    <h2>Welcome to our Home Page </h2>
 </template>

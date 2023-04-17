@@ -7,7 +7,6 @@
 
   font-weight: normal;
 }
-
 .signup input {
   height: 40px;
   width: 330px;
@@ -22,6 +21,17 @@ button.register {
   height: 40px;
   color: #000;
   background: skyblue;
+}
+img.mysignupLogo {
+  margin-left: 132px;
+  height: 61px;
+  width: 60px;
+}
+h2.signup-title {
+  text-align: center;
+}
+.main-login-page .login-title {
+  margin-left: 136px;
 }
 
 a,
