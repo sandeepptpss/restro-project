@@ -9,6 +9,7 @@ const routes=[
         component:Home,
         path:'/'
     },
+    
     {
         name:'SignUp',
         component:SignUp,
