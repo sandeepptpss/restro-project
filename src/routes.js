@@ -20,8 +20,6 @@ const routes=[
         component:Login,
         path:'/login'
     }
-
-    
 ]
 const router =createRouter({
     history:createWebHistory(),
