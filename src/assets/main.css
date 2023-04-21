@@ -1,13 +1,24 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
 
   font-weight: normal;
 }
+img.mysignupLogo {
+  margin-left: 889px;
+  height: 61px;
+  width: 60px;
+}
+h2.add-resto-data {
+  margin-left: 813px;
+}
 
+.add-resto h2.login-title {
+  color: red;
+  margin-left: 80px;
+  /* text-align: center; */
+}
 .signup input {
   height: 40px;
   width: 330px;
@@ -17,6 +28,18 @@
   margin-left: auto;
   margin-right: auto;
 }
+.restro-header-page {
+  background-color: #000;
+  text-align: center;
+  overflow: hidden;
+  padding: 0px;
+  font-size: 19px;
+}
+.restro-header-page a{
+margin: 10px;
+color: #fff;
+}
+
 
 button.register {
   width: 328px;
@@ -24,40 +47,45 @@ button.register {
   color: #000;
   background: skyblue;
 }
-img.mysignupLogo {
-  margin-left: 132px;
-  height: 61px;
-  width: 60px;
+p.text-center {
+  text-align: center;
+  margin-left: -51px;
 }
+p.text-center ul li {
+  color: red !important;
+}
+
 h2.signup-title {
   text-align: center;
 }
 .main-login-page .login-title {
-  margin-left: 136px;
+  margin-left: 124px;
 }
-
+a.register-login-btn {
+  margin-left: 909px;
+}
+h2.login-title {
+  text-align: center;
+  margin-right: 134px;
+}
+a.restro-sign-up {
+  margin-left: 901px;
+}
 a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
   transition: 0.4s;
 }
+button.register {
+  margin-left: 760px;
+}
 
+a.register-login {
+  margin-left: 907px;
+}
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
   }
 }
