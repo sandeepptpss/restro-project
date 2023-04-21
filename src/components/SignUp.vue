@@ -11,6 +11,7 @@
           <li v-show="error == 'Name required'">{{ error }}</li>
         </ul>
         </p>
+        
       </div>
       <div class="main-field">
         <input v-model="name" type="text" placeholder="Enter Name">
