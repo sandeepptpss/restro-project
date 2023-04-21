@@ -13,6 +13,7 @@
         </ul>
     </p>
     </div>
+    
 <input  v-model="address" required type="text" placeholder="Enter Address" >
 <p v-if="errors.length" class="text-center">
     <ul v-for="error in errors">
