@@ -13,9 +13,8 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Install Vue
  npm init vue@latest
- 
- ex. Project name:- Blog
- cd Blog
+
+ cd restro-project
 
  
 ## Project Setup
