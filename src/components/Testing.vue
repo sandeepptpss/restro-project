@@ -28,6 +28,7 @@
             <li v-show="error == 'password required'">{{ error }}</li>
           </ul>
           </p>
+          
           <input type="password" v-model="password" placeholder="Emter Password">
         </div>
         <button class="register" v-on:click="SignUp" type="submit">SignUp</button>
@@ -36,7 +37,6 @@
       </div>
     </div>
   </template>
-  
   <script>
   import axios from "axios"
   export default {
