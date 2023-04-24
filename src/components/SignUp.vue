@@ -1,4 +1,7 @@
 <template>
+  <div class="restro-header-page">
+<Header/>
+</div>
   <div class="main-signup">
     <div class="inner-logo">
       <img class="mysignupLogo" src="./images/SignUp.png">
@@ -11,10 +14,9 @@
           <li v-show="error == 'Name required'">{{ error }}</li>
         </ul>
         </p>
-        
       </div>
       <div class="main-field">
-        <input v-model="name" type="text" placeholder="Enter Name">
+        <input v-model="name" type="text" placeholder="Enter Name" required>
         <p v-if="errors.length" class="text-center">
         <ul v-for="error in errors">
           <li v-show="error == 'Email required' || error == 'Valid email required'">{{ error }}</li>
@@ -22,24 +24,31 @@
         </p>
       </div>
       <div class="main-field">
-        <input v-model="email" type="text" placeholder="Enter Email">
+        <input v-model="email" type="text" placeholder="Enter Email" required>
         <p v-if="errors.length" class="text-center">
         <ul v-for="error in errors">
           <li v-show="error == 'password required'">{{ error }}</li>
         </ul>
         </p>
-        <input type="password" v-model="password" placeholder="Emter Password">
+        <input type="password" v-model="password" placeholder="Emter Password" required>
       </div>
       <button class="register" v-on:click="SignUp" type="submit">SignUp</button>
       <br />
-      <router-link to="/login">Login</router-link>
+      <router-link class="login-btn" to="/login">Login</router-link>
     </div>
   </div>
+  <Footer />
 </template>
 <script>
 import axios from "axios"
+import Header from "./Header.vue"
+import Footer from "./Footer.vue"
 export default {
   name: 'SignUp',
+  components:{
+        Header,
+        Footer
+    },
   data() {
     return {
       errors: [],
@@ -49,46 +58,42 @@ export default {
     }
   },
   methods: {
-    async SignUp(e) {
-      e.preventDefault();
+    async SignUp() {
+      // this.errors = [];
+      // if (!this.name) {
+      //   this.errors.push("Name required");
+      // }
+      // if (!this.name) {
+      //   this.errors.push("password required");
+      // }
+      // if (!this.email) {
+      //   this.errors.push('Email required');
+      // } else if (!this.validEmail(this.email)) {
+      //   this.errors.push('Valid email required');
+      // }
+      // if (!this.errors.length) {
+      //   return true;
+      // }
 
-      this.errors = [];
-
-      if (!this.name) {
-        this.errors.push("Name required");
-      }
-      if (!this.name) {
-        this.errors.push("password required");
-      }
-      if (!this.email) {
-        this.errors.push('Email required');
-      } else if (!this.validEmail(this.email)) {
-        this.errors.push('Valid email required');
-      }
-
-      if (!this.errors.length) {
-        return true;
-      }
-
+        if(!this.password || !this.email || !this.name){
+          alert('this field is required')
+         return;
+        
+        }
       if (this.errors.length === 0) {
         let result = await axios.post("http://localhost:3000/users", {
           password: this.password,
           email: this.email,
           name: this.name
         });
-
         if (result.status == 201) {
           alert('SignUp Successfully')
-
           localStorage.setItem('user-info', JSON.stringify(result.data));
           this.$router.push({ name: 'Home' })
         }
       }
-    },
-    validEmail: function (email) {
-      var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(email);
     }
+
   },
   mounted() {
     let User = localStorage.getItem('user-info');

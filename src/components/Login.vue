@@ -16,15 +16,18 @@
 <router-link class="restro-sign-up" to="/sign-up">Sign Up</router-link>
 </div>
 </div>
+<Footer />
 </template>
 <script>
 import Header from './Header.vue';
+import Footer from './Footer.vue';
 import axios from 'axios';
-
 export default{
 name:"Login",
 components:{
-        Header
+      Header,
+      Footer
+
     },
   data(){
     return{
@@ -33,6 +36,7 @@ components:{
     }
   },
   methods:{
+    
   async  Login(){
     let result = await axios .get(
     `
@@ -44,7 +48,7 @@ components:{
         localStorage.setItem('user-info',JSON.stringify(result.data[0]));
         this.$router.push({name:'Home'})
         }else{
-        console.warn('Wrong Data Enter')
+      alert('Wrong Data User name and Password')
         }
     }
   },

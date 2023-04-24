@@ -3,6 +3,8 @@ import SignUp from './components/SignUp.vue';
 import Login from './components/Login.vue'
 import AddRestro from './components/AddRestro.vue'
 import Update from './components/Update.vue'
+import Testing from './components/Testing.vue'
+import About from './components/About.vue'
 
 import { createRouter,createWebHistory } from 'vue-router';
 
@@ -26,12 +28,22 @@ const routes=[
     {
         name:'Update',
         component:Update,
-        path:'/update'
+        path:'/update/:id'
     },
     {
         name:'AddRestro',
         component:AddRestro,
         path:'/add'
+    },
+    {
+        name:'Testing',
+        component:Testing,
+        path:'/testing'
+    },
+    {
+        name:'About',
+        component:About,
+        path:'/about'
     }
 
 ];
